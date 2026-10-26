@@ -162,8 +162,7 @@ body {
 
 .btn-sm:hover, .btn-primary:hover { opacity: 0.9; }
 
-/* Learn / Accordion Cards */
-.card { margin-bottom: 20px; }
+/* Cards & Accordions */
 .card ul { margin: 10px 0 0 20px; color: var(--text-muted); }
 .card li { margin-bottom: 8px; line-height: 1.5; }
 
