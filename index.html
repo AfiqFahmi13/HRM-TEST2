@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Management Study Hub</title>
+    <title>My Study Notes App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,163 +11,80 @@
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h2>🎓 HR Study Hub</h2>
-                <p>Chapters 4, 6 & 7 Complete</p>
+                <h2>📚 My Study Hub</h2>
+                <p>Custom Lecture Notes</p>
             </div>
             <nav class="sidebar-nav">
                 <a href="#" class="nav-item active" onclick="switchView('dashboard', event)">📊 Dashboard</a>
-                <a href="#" class="nav-item" onclick="switchView('learn', event)">📖 Learn Chapters</a>
-                <a href="#" class="nav-item" onclick="switchView('flashcards', event)">⚡ Flashcards</a>
+                <a href="#" class="nav-item" onclick="switchView('notes', event)">📖 Lecture Notes</a>
                 <a href="#" class="nav-item" onclick="switchView('quiz', event)">📝 Practice Quiz</a>
                 <a href="#" class="nav-item" onclick="switchView('cheatsheet', event)">📋 Cheat Sheet</a>
             </nav>
-            <div class="sidebar-footer">
-                <p>Progress saved locally in browser.</p>
-            </div>
         </aside>
 
         <!-- Main Content Area -->
         <main class="main-content">
             <header class="top-bar">
                 <h1 id="viewTitle">Dashboard</h1>
-                <div class="top-actions">
-                    <span class="badge-time">Exam Prep Active</span>
-                </div>
             </header>
 
-            <!-- VIEW: DASHBOARD -->
+            <!-- DASHBOARD VIEW -->
             <div id="dashboardView" class="view-section active">
                 <div class="hero-card">
-                    <div class="hero-text">
-                        <span class="badge">Complete HR Syllabus</span>
-                        <h2>Master Selection, Training & Performance</h2>
-                        <p>Fully updated with all slides from Chapter 4 (Selection), Chapter 6 (Training), and Chapter 7 (Performance Management).</p>
-                    </div>
+                    <h2>Welcome to Your Study App</h2>
+                    <p>Access your complete lecture notes, custom quizzes, and exam cheat sheets deployed live on Vercel.</p>
                 </div>
-
-                <!-- Stats Grid -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h3>Total Chapters Loaded</h3>
-                        <div class="stat-value">3 Modules</div>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Key Slide Concepts</h3>
-                        <div class="stat-value">100% Covered</div>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Quiz Status</h3>
-                        <div class="stat-value">Ready</div>
-                    </div>
-                </div>
-
-                <h3 class="section-title">Chapters Breakdown</h3>
                 <div class="chapters-grid">
-                    <div class="chapter-card">
-                        <span class="badge-ch">Chapter 4</span>
-                        <h3>Selecting & Placing Employees</h3>
-                        <p>Covers P-J & P-O fit, ATS, application forms, resume screening, employment tests (cognitive, physical, work samples like IKEA, personality/Big-5/OPQ), interviews, and background checks[cite: 36, 46, 50, 56, 64].</p>
-                        <button class="btn-sm" onclick="switchView('learn', event)">Study Chapter</button>
+                    <div class="ch-card">
+                        <h3>Lecture Notes & Summaries</h3>
+                        <p>Read through your organized chapter notes and core concepts.</p>
+                        <button class="btn-sm" onclick="switchView('notes')">Open Notes</button>
                     </div>
-                    <div class="chapter-card">
-                        <span class="badge-ch">Chapter 6</span>
-                        <h3>Training Employees</h3>
-                        <p>Covers TNA (Organisation, Job, Person), readiness for training, training methods (Classroom, Audiovisual, Computer-based, OJT, Simulation, VR, Business Games), and 5 measures of success[cite: 3, 10, 15, 18, 29].</p>
-                        <button class="btn-sm" onclick="switchView('learn', event)">Study Chapter</button>
+                    <div class="ch-card">
+                        <h3>Practice Quiz</h3>
+                        <p>Test your knowledge with interactive multiple-choice questions.</p>
+                        <button class="btn-sm" onclick="switchView('quiz')">Take Quiz</button>
                     </div>
-                    <div class="chapter-card">
-                        <span class="badge-ch">Chapter 7</span>
-                        <h3>Managing Performance</h3>
-                        <p>Covers PM purposes (strategic, administrative, developmental), 360-degree appraisal sources, measurement methods (Graphic scales, BARS, productivity, forced distribution), rater errors, and feedback types[cite: 69, 74, 78, 83, 90].</p>
-                        <button class="btn-sm" onclick="switchView('learn', event)">Study Chapter</button>
+                    <div class="ch-card">
+                        <h3>Cheat Sheet</h3>
+                        <p>Quick-reference tables and key definitions for last-minute review.</p>
+                        <button class="btn-sm" onclick="switchView('cheatsheet')">Open Cheat Sheet</button>
                     </div>
                 </div>
             </div>
 
-            <!-- VIEW: LEARN CHAPTERS -->
-            <div id="learnView" class="view-section">
-                <h2>Comprehensive Slide Summaries</h2>
-                
+            <!-- LECTURE NOTES VIEW (You can add/edit notes here) -->
+            <div id="notesView" class="view-section">
+                <h2>Complete Lecture Notes</h2>
                 <div class="card">
-                    <h3>Chapter 4: Selecting Employees & Placing Them in Jobs[cite: 35]</h3>
-                    <ul>
-                        <li><strong>Fit Types:</strong> Person-Job fit (KSAOs vs job requirements) and Person-Organization fit (values, culture, goals)[cite: 39].</li>
-                        <li><strong>Selection Process Steps:</strong> Application/Resume review ➔ Preliminary interview ➔ Selection tests ➔ Employment interviews ➔ Background & reference checks ➔ Selection decision ➔ Physical examination[cite: 41].</li>
-                        <li><strong>ATS (Applicant Tracking System):</strong> Software managing job postings, automated AI screening, tracking, and manager access[cite: 46].</li>
-                        <li><strong>Employment Tests:</strong> Cognitive ability tests, Achievement/Aptitude tests, Physical ability tests (strength, dexterity, balance), Work sample tests (e.g., IKEA furniture assembly), and Personality inventories (Big-5: Openness, Conscientiousness, Extraversion, Agreeableness, Emotional Stability; OPQ32r)[cite: 50, 52, 53, 55, 56].</li>
-                        <li><strong>Interview Types:</strong> Nondirective, Structured, Situational, and Behavior Description Interview (BDI). Formats include One-on-one, Group, and Board/Panel interviews[cite: 61, 62].</li>
-                        <li><strong>Background Checks:</strong> Verifying identity, education, employment history, criminal records, and credit checks (APAC stats: high discrepancies found in employment verification)[cite: 64].</li>
-                    </ul>
+                    <h3>Chapter Topic 1</h3>
+                    <p>Add your detailed notes, definitions, and slide explanations here...</p>
                 </div>
-
                 <div class="card" style="margin-top: 20px;">
-                    <h3>Chapter 6: Training Employees[cite: 2]</h3>
-                    <ul>
-                        <li><strong>Benefits:</strong> Stronger performance, confidence, retention (No. 1 retention strategy per LinkedIn 2025 report)[cite: 5].</li>
-                        <li><strong>Training Design Stages:</strong> 1. Assess needs ➔ 2. Ensure readiness ➔ 3. Plan programme ➔ 4. Implement training ➔ 5. Evaluate results[cite: 9].</li>
-                        <li><strong>Training Needs Analysis (TNA):</strong> Assessed at 3 levels: Organisation analysis, Job/task analysis, and Person analysis[cite: 10].</li>
-                        <li><strong>Readiness for Training:</strong> Employee characteristics (ability, motivation) + Work environment support (time, budget, manager support)[cite: 15].</li>
-                        <li><strong>Training Methods:</strong> Classroom instruction, Audiovisual, Computer-based/Digital learning, On-the-job training (OJT), Simulations, Virtual Reality (VR), and Business Games/Case Studies[cite: 18].</li>
-                        <li><strong>Measures of Success:</strong> Trainee satisfaction, Transfer of training, New knowledge & skills, Performance improvements, and Return on Investment (ROI)[cite: 29].</li>
-                    </ul>
-                </div>
-
-                <div class="card" style="margin-top: 20px;">
-                    <h3>Chapter 7: Managing Employees' Performance[cite: 68]</h3>
-                    <ul>
-                        <li><strong>Purposes of PM:</strong> Strategic (align goals), Administrative (rewards/bonuses/salary), and Developmental (identify strengths/weaknesses and training)[cite: 74].</li>
-                        <li><strong>Appraisal Sources:</strong> Manager/Supervisor, Peers, Subordinates, Self-appraisal, Customer appraisal, and 360-degree multi-rater feedback[cite: 77, 78].</li>
-                        <li><strong>Measurement Methods:</strong> Graphic Rating Scales, Behaviorally Anchored Rating Scales (BARS), Productivity/Results measures (quantitative targets), and Forced-distribution (normal bell curve)[cite: 79].</li>
-                        <li><strong>Common Rater Errors:</strong> Similar-to-me, Contrast error, Leniency/Strictness, Central tendency, Recency error, Favoritism, and Halo/Horn effect[cite: 85].</li>
-                        <li><strong>Feedback Approaches:</strong> Tell-and-sell, Tell-and-listen, Problem-solving, Coaching & development, and Continuous feedback check-ins[cite: 90].</li>
-                    </ul>
+                    <h3>Chapter Topic 2</h3>
+                    <p>Add your second chapter notes here...</p>
                 </div>
             </div>
 
-            <!-- VIEW: FLASHCARDS -->
-            <div id="flashcardsView" class="view-section">
-                <h2>Active Recall Flashcards</h2>
-                <div class="flashcard-container" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <span class="badge">Chapter 6 & 7</span>
-                            <h3>Click to Flip: What are the 3 main purposes of Performance Management?</h3>
-                            <p class="hint">Click card to reveal answer</p>
-                        </div>
-                        <div class="flashcard-back">
-                            <h3>Answer:</h3>
-                            <p>1. <strong>Strategic:</strong> Aligns individual performance with organizational goals[cite: 74].<br>
-                               2. <strong>Administrative:</strong> Supports reward, bonus, and promotion decisions[cite: 74].<br>
-                               3. <strong>Developmental:</strong> Builds employee capability and identifies training needs[cite: 74].</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- VIEW: QUIZ -->
+            <!-- QUIZ VIEW -->
             <div id="quizView" class="view-section">
-                <h2>Practice Exam Quiz</h2>
-                <div class="quiz-card" id="quizContainer">
-                    <h3>Question 1: Which of the following is evaluated during a Task Analysis in Training Needs Analysis (TNA)?</h3>
-                    <label><input type="radio" name="q1" value="wrong"> Company mission and strategic goals</label><br>
-                    <label><input type="radio" name="q1" value="wrong"> Employee motivation and readiness to learn</label><br>
-                    <label><input type="radio" name="q1" value="correct"> Key tasks, performance standards, and required knowledge/skills[cite: 12]</label><br>
-                    <label><input type="radio" name="q1" value="wrong"> Return on investment (ROI) percentages</label><br>
+                <h2>Interactive Practice Quiz</h2>
+                <div class="quiz-card">
+                    <h3>Question 1: What is the primary focus of this module?</h3>
+                    <label><input type="radio" name="q1" value="wrong"> Incorrect Option</label><br>
+                    <label><input type="radio" name="q1" value="correct"> Correct Concept Answer</label><br>
                     <button class="btn-primary" onclick="submitQuiz()" style="margin-top: 15px;">Submit Answer</button>
                     <p id="quizResult" style="margin-top: 10px; font-weight: bold;"></p>
                 </div>
             </div>
 
-            <!-- VIEW: CHEAT SHEET -->
+            <!-- CHEAT SHEET VIEW -->
             <div id="cheatsheetView" class="view-section">
-                <h2>Comprehensive HR Cheat Sheet</h2>
+                <h2>Exam Cheat Sheet</h2>
                 <table class="cheat-table">
-                    <tr><th>Chapter / Topic</th><th>Core Concept</th><th>Key Slide Takeaway</th></tr>
-                    <tr><td>Ch 4: Person-Job Fit</td><td>Matching individual KSAOs[cite: 39]</td><td>Proper alignment ensures job success.</td></tr>
-                    <tr><td>Ch 4: Work Samples</td><td>Simulated task testing[cite: 53]</td><td>IKEA furniture assembly example[cite: 53].</td></tr>
-                    <tr><td>Ch 6: TNA Levels</td><td>Organisation, Job, Person[cite: 10]</td><td>Systematic identification of training needs.</td></tr>
-                    <tr><td>Ch 7: BARS</td><td>Behaviorally Anchored Rating Scales[cite: 79]</td><td>Rates specific observable behaviors[cite: 79].</td></tr>
-                    <tr><td>Ch 7: Halo Effect</td><td>Positive bias spillover[cite: 88]</td><td>One good trait inflates other ratings[cite: 88].</td></tr>
+                    <tr><th>Concept</th><th>Definition / Key Takeaway</th></tr>
+                    <tr><td>Term 1</td><td>Quick summary or formula</td></tr>
+                    <tr><td>Term 2</td><td>Quick summary or formula</td></tr>
                 </table>
             </div>
         </main>
@@ -177,18 +94,14 @@
         function switchView(viewName, event) {
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-            
             if(event) event.currentTarget.classList.add('active');
 
             if(viewName === 'dashboard') {
                 document.getElementById('dashboardView').classList.add('active');
                 document.getElementById('viewTitle').innerText = 'Dashboard';
-            } else if(viewName === 'learn') {
-                document.getElementById('learnView').classList.add('active');
-                document.getElementById('viewTitle').innerText = 'Learn Chapters';
-            } else if(viewName === 'flashcards') {
-                document.getElementById('flashcardsView').classList.add('active');
-                document.getElementById('viewTitle').innerText = 'Flashcards';
+            } else if(viewName === 'notes') {
+                document.getElementById('notesView').classList.add('active');
+                document.getElementById('viewTitle').innerText = 'Lecture Notes';
             } else if(viewName === 'quiz') {
                 document.getElementById('quizView').classList.add('active');
                 document.getElementById('viewTitle').innerText = 'Practice Quiz';
@@ -207,10 +120,10 @@
                 return;
             }
             if(selected.value === 'correct') {
-                result.innerText = "Correct! Task analysis defines key tasks, performance standards, and required knowledge/skills[cite: 12].";
+                result.innerText = "Correct! Great job.";
                 result.style.color = "#34d399";
             } else {
-                result.innerText = "Incorrect. Task analysis focuses on key tasks, standards, and required knowledge/skills[cite: 12].";
+                result.innerText = "Incorrect. Try again!";
                 result.style.color = "#f87171";
             }
         }
