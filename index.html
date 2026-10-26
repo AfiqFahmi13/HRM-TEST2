@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Management Study Hub</title>
+    <title>Interactive HR Study Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,13 +18,13 @@
             </div>
             <nav class="sidebar-nav">
                 <a href="#" class="nav-item active" onclick="switchView('dashboard', event)">📊 Dashboard</a>
-                <a href="#" class="nav-item" onclick="switchView('learn', event)">📖 Learn Notes</a>
+                <a href="#" class="nav-item" onclick="switchView('flashcards', event)">⚡ Flashcards</a>
+                <a href="#" class="nav-item" onclick="switchView('quiz', event)">📝 Interactive Quiz</a>
                 <a href="#" class="nav-item" onclick="switchView('pdfs', event)">📂 PDF Slides</a>
-                <a href="#" class="nav-item" onclick="switchView('quiz', event)">📝 Quiz</a>
-                <a href="#" class="nav-item" onclick="switchView('cheatsheet', event)">📋 Compare / Cheat Sheet</a>
+                <a href="#" class="nav-item" onclick="switchView('cheatsheet', event)">📋 Cheat Sheet</a>
             </nav>
             <div class="sidebar-footer">
-                <p>Content matches your PDF lecture notes. Saved locally.</p>
+                <p>Fully interactive & saved locally.</p>
             </div>
         </aside>
 
@@ -32,204 +32,91 @@
         <main class="main-content">
             <header class="top-bar">
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <span style="color: #9ca3af; font-size: 0.9rem;">Search ⌘K</span>
+                    <input type="text" id="searchInput" placeholder="Search study notes..." onkeyup="filterNotes()" style="background:#1e293b; border:1px solid #334155; color:#fff; padding:6px 12px; border-radius:6px; font-size:0.85rem; width:220px;">
                 </div>
                 <div style="display: flex; align-items: center; gap: 15px;">
-                    <button class="top-time-btn">⏱ Test time!</button>
-                    <span style="cursor: pointer;">🌙</span>
+                    <button class="top-time-btn" onclick="alert('Exam Countdown: Chapters 4, 6 & 7 ready for review!')">⏱ Test Status</button>
                 </div>
             </header>
 
             <!-- VIEW: DASHBOARD -->
             <div id="dashboardView" class="view-section active">
-                <!-- Top Banners Row -->
                 <div class="top-banners-grid">
                     <div class="banner-card">
                         <div class="banner-subtitle">HR Management</div>
-                        <h2 class="banner-title">Test 1 countdown</h2>
-                        <div class="banner-date">📅 HR Test 1 · Chapters 4, 6 & 7</div>
+                        <h2 class="banner-title">Interactive Study Portal</h2>
+                        <div class="banner-date">📅 Chapters 4 (Selection), 6 (Training), & 7 (Performance)</div>
                         <div class="banner-status-box">
-                            <span class="status-text">Ready to master selection, training & performance!</span>
+                            <span class="status-text">Interactive flashcards & quizzes enabled!</span>
                         </div>
-                        <button class="continue-btn" onclick="switchView('learn')">▶ Start Learning Notes</button>
-                    </div>
-
-                    <div class="banner-card suggestion-card">
-                        <div class="suggestion-header">💡 Quick Access</div>
-                        <div class="suggestion-status">PDFs Attached</div>
-                        <p class="suggestion-desc">All 3 lecture slide PDFs are linked and embedded for direct review.</p>
+                        <button class="continue-btn" onclick="switchView('quiz')">▶ Start Practice Quiz</button>
                     </div>
                 </div>
 
-                <!-- Stats Overview Row -->
                 <div class="stats-overview-grid">
                     <div class="stat-box">
-                        <div class="stat-label">Syllabus Covered</div>
-                        <div class="stat-number">100%</div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 100%;"></div></div>
-                        <div class="stat-sub">Chapters 4, 6 & 7 loaded</div>
+                        <div class="stat-label">Interactive Flashcards</div>
+                        <div class="stat-number">3 Cards</div>
+                        <div class="stat-sub">Click to flip & test memory</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-label">Uploaded PDFs</div>
-                        <div class="stat-number">3 Files</div>
-                        <div class="stat-sub" style="margin-top: 15px;">Ready in repo</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Quiz Modules</div>
-                        <div class="stat-number">3 Active</div>
-                        <div class="stat-sub" style="margin-top: 15px;">Exam practice ready</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Focus Areas</div>
-                        <div class="stat-number" style="color: #38bdf8;">Core HR</div>
-                        <div class="stat-sub" style="margin-top: 15px;">Selection, TNA & PM</div>
-                    </div>
-                </div>
-
-                <!-- Chapters Section Header -->
-                <div class="chapters-header-row">
-                    <h2>Chapters & PDF Slides</h2>
-                    <a href="#" onclick="switchView('pdfs', event)" class="open-learn-link">View All PDFs</a>
-                </div>
-
-                <!-- Chapters Grid Cards -->
-                <div class="chapters-cards-grid">
-                    <!-- Chapter 4 -->
-                    <div class="ch-card">
-                        <div class="ch-card-header">
-                            <span class="ch-badge">4</span>
-                            <h3>Selecting Employees & Placing Them in Jobs</h3>
-                        </div>
-                        <div class="ch-progress-info">
-                            <span>Source File</span>
-                            <span>Chp 4_Selection_uL_2.pdf</span>
-                        </div>
-                        <div class="weak-tags" style="margin-top: 15px;">
-                            <span class="weak-tag">✔ P-J & P-O Fit[cite: 131]</span>
-                            <span class="weak-tag">✔ ATS & Resume Screening[cite: 137, 139]</span>
-                            <span class="weak-tag">✔ Employment Tests (OPQ/Big-5)[cite: 141, 147]</span>
-                        </div>
-                        <div class="ch-card-actions">
-                            <a href="Chp 4_Selection_uL_2.pdf" target="_blank" class="ch-action-btn" style="text-decoration:none; display:flex; align-items:center; justify-content:center;">📥 View PDF</a>
-                            <button class="ch-action-btn" onclick="switchView('learn')">📖 Study</button>
-                        </div>
-                    </div>
-
-                    <!-- Chapter 6 -->
-                    <div class="ch-card">
-                        <div class="ch-card-header">
-                            <span class="ch-badge">6</span>
-                            <h3>Training Employees</h3>
-                        </div>
-                        <div class="ch-progress-info">
-                            <span>Source File</span>
-                            <span>Ch06_Training_S_2.pdf</span>
-                        </div>
-                        <div class="weak-tags" style="margin-top: 15px;">
-                            <span class="weak-tag">✔ TNA Levels (Org, Job, Person)[cite: 101]</span>
-                            <span class="weak-tag">✔ Training Methods (VR, OJT, Simulation)[cite: 109, 114, 116]</span>
-                            <span class="weak-tag">✔ Measures of Success (ROI & Transfer)[cite: 121, 123]</span>
-                        </div>
-                        <div class="ch-card-actions">
-                            <a href="Ch06_Training_S_2.pdf" target="_blank" class="ch-action-btn" style="text-decoration:none; display:flex; align-items:center; justify-content:center;">📥 View PDF</a>
-                            <button class="ch-action-btn" onclick="switchView('learn')">📖 Study</button>
-                        </div>
-                    </div>
-
-                    <!-- Chapter 7 -->
-                    <div class="ch-card">
-                        <div class="ch-card-header">
-                            <span class="ch-badge">7</span>
-                            <h3>Managing Employees' Performance</h3>
-                        </div>
-                        <div class="ch-progress-info">
-                            <span>Source File</span>
-                            <span>Chp7_PM_uL_2.pdf</span>
-                        </div>
-                        <div class="weak-tags" style="margin-top: 15px;">
-                            <span class="weak-tag">✔ Purposes (Strategic, Admin, Dev)[cite: 166]</span>
-                            <span class="weak-tag">✔ 360-Degree Appraisal Sources[cite: 169]</span>
-                            <span class="weak-tag">✔ Rater Errors (Halo/Horn & Leniency)[cite: 176, 177]</span>
-                        </div>
-                        <div class="ch-card-actions">
-                            <a href="Chp7_PM_uL_2.pdf" target="_blank" class="ch-action-btn" style="text-decoration:none; display:flex; align-items:center; justify-content:center;">📥 View PDF</a>
-                            <button class="ch-action-btn" onclick="switchView('learn')">📖 Study</button>
-                        </div>
+                        <div class="stat-label">Quiz Score</div>
+                        <div class="stat-number" id="liveScore">0%</div>
+                        <div class="stat-sub">Instant grading active</div>
                     </div>
                 </div>
             </div>
 
-            <!-- VIEW: LEARN NOTES -->
-            <div id="learnView" class="view-section">
-                <h2>Lecture Notes & Summaries</h2>
-                <div class="card" style="background:#141c2e; border:1px solid #1e293b; padding:20px; border-radius:10px; margin-bottom:20px;">
-                    <h3 style="color:#38bdf8;">Chapter 4: Employee Selection & Placement</h3>
-                    <ul style="color:#94a3b8; line-height:1.6;">
-                        <li><strong>Person-Job (P-J) Fit & Person-Organization (P-O) Fit:</strong> Matching KSAOs with job requirements and aligning individual values with company culture[cite: 131].</li>
-                        <li><strong>Applicant Tracking System (ATS):</strong> Software automating job postings, candidate screening, tracking, and manager collaboration[cite: 138].</li>
-                        <li><strong>Employment Tests:</strong> Includes cognitive ability, physical ability, work samples (e.g., IKEA furniture assembly test), and personality inventories (Big-5 and OPQ32r)[cite: 141, 144, 147, 148].</li>
-                        <li><strong>Background Checks:</strong> Verifying identity, education, employment history, and criminal records[cite: 155].</li>
-                    </ul>
+            <!-- VIEW: FLASHCARDS (Interactive Flip) -->
+            <div id="flashcardsView" class="view-section">
+                <h2>Interactive Flashcards (Active Recall)</h2>
+                <p style="color:#94a3b8; margin-bottom:20px;">Click the card to flip between question and answer.</p>
+                
+                <div class="flashcard-container" id="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <span class="ch-badge" id="fcChapter">Ch 4</span>
+                            <h3 id="fcQuestion" style="margin-top:20px; font-size:1.2rem;">What is Person-Job (P-J) fit?</h3>
+                            <p class="hint" style="margin-top:40px; color:#38bdf8;">Click to flip card 🔄</p>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3>Answer:</h3>
+                            <p id="fcAnswer" style="font-size:1.05rem; line-height:1.5;">The degree to which individuals are matched to the required competencies (KSAOs) for job success[cite: 131].</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="card" style="background:#141c2e; border:1px solid #1e293b; padding:20px; border-radius:10px; margin-bottom:20px;">
-                    <h3 style="color:#38bdf8;">Chapter 6: Training Employees</h3>
-                    <ul style="color:#94a3b8; line-height:1.6;">
-                        <li><strong>Training Needs Analysis (TNA):</strong> Assessed at 3 levels: Organisation analysis, Job/task analysis, and Person analysis[cite: 101].</li>
-                        <li><strong>Training Methods:</strong> Classroom instruction, audiovisual, computer-based digital learning, on-the-job training (OJT), simulations, virtual reality (VR), and business games/case studies[cite: 109].</li>
-                        <li><strong>Measures of Success:</strong> Evaluated via trainee satisfaction, transfer of training, new knowledge/skills, performance improvements, and ROI[cite: 121].</li>
-                    </ul>
-                </div>
-
-                <div class="card" style="background:#141c2e; border:1px solid #1e293b; padding:20px; border-radius:10px;">
-                    <h3 style="color:#38bdf8;">Chapter 7: Managing Employees' Performance</h3>
-                    <ul style="color:#94a3b8; line-height:1.6;">
-                        <li><strong>Purposes:</strong> Strategic alignment, administrative decisions (pay/bonuses), and developmental feedback[cite: 166].</li>
-                        <li><strong>Appraisal Sources:</strong> Manager, peers, subordinates, self-appraisal, customer appraisal, and 360-degree feedback[cite: 167, 169].</li>
-                        <li><strong>Rater Errors:</strong> Similar-to-me, contrast, leniency/strictness, central tendency, recency, favoritism, and halo/horn effects[cite: 176].</li>
-                    </ul>
+                <div style="margin-top: 20px; display:flex; gap:10px;">
+                    <button class="ch-action-btn" onclick="nextFlashcard()">Next Card ➡</button>
                 </div>
             </div>
 
-            <!-- VIEW: PDF SLIDES DIRECT ACCESS -->
-            <div id="pdfsView" class="view-section">
-                <h2>Direct PDF Lecture Slide Files</h2>
-                <p style="color: #94a3b8; margin-bottom: 20px;">Click any file below to open and view your original lecture slides directly in your browser:</p>
-                <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <a href="Chp 4_Selection_uL_2.pdf" target="_blank" class="pdf-link-card">
-                        <span>📄 Chapter 4: Selecting Employees & Placing Them in Jobs</span>
-                        <span style="color:#38bdf8;">Open PDF ↗</span>
-                    </a>
-                    <a href="Ch06_Training_S_2.pdf" target="_blank" class="pdf-link-card">
-                        <span>📄 Chapter 6: Training Employees</span>
-                        <span style="color:#38bdf8;">Open PDF ↗</span>
-                    </a>
-                    <a href="Chp7_PM_uL_2.pdf" target="_blank" class="pdf-link-card">
-                        <span>📄 Chapter 7: Managing Employees' Performance</span>
-                        <span style="color:#38bdf8;">Open PDF ↗</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- VIEW: QUIZ -->
+            <!-- VIEW: QUIZ (Interactive Instant Grading) -->
             <div id="quizView" class="view-section">
-                <h2>Practice Exam Quiz</h2>
-                <div class="quiz-card" style="background:#141c2e; border:1px solid #1e293b; padding:20px; border-radius:10px;">
-                    <h3>Question 1: Which Training Needs Analysis (TNA) level identifies what knowledge and skills are needed to perform a job effectively[cite: 101]?</h3>
-                    <label><input type="radio" name="q1" value="wrong"> Organisation Analysis</label><br>
-                    <label><input type="radio" name="q1" value="correct"> Job / Task Analysis[cite: 101]</label><br>
-                    <label><input type="radio" name="q1" value="wrong"> Person Analysis</label><br>
-                    <button class="btn-primary" onclick="submitQuiz()" style="margin-top: 15px; background:#38bdf8; border:none; padding:8px 16px; border-radius:6px; font-weight:bold; cursor:pointer;">Submit Answer</button>
-                    <p id="quizResult" style="margin-top: 10px; font-weight: bold;"></p>
+                <h2>Interactive Practice Quiz</h2>
+                <div id="quizContainer" style="background:#141c2e; border:1px solid #1e293b; padding:25px; border-radius:10px; max-width:700px;">
+                    <h3 id="quizQuestion">Loading question...</h3>
+                    <div id="quizOptions" style="display:flex; flex-direction:column; gap:10px; margin: 15px 0;"></div>
+                    <button class="continue-btn" onclick="nextQuizQuestion()">Next Question</button>
+                    <p id="quizFeedback" style="margin-top:15px; font-weight:bold;"></p>
+                </div>
+            </div>
+
+            <!-- VIEW: PDF SLIDES -->
+            <div id="pdfsView" class="view-section">
+                <h2>Original PDF Slide Files</h2>
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-top:15px;">
+                    <a href="Chp 4_Selection_uL_2.pdf" target="_blank" class="pdf-link-card"><span>📄 Chapter 4: Employee Selection</span><span style="color:#38bdf8;">Open PDF ↗</span></a>
+                    <a href="Ch06_Training_S_2.pdf" target="_blank" class="pdf-link-card"><span>📄 Chapter 6: Training Employees</span><span style="color:#38bdf8;">Open PDF ↗</span></a>
+                    <a href="Chp7_PM_uL_2.pdf" target="_blank" class="pdf-link-card"><span>📄 Chapter 7: Managing Performance</span><span style="color:#38bdf8;">Open PDF ↗</span></a>
                 </div>
             </div>
 
             <!-- VIEW: CHEAT SHEET -->
             <div id="cheatsheetView" class="view-section">
-                <h2>Comprehensive HR Cheat Sheet</h2>
+                <h2>Quick Reference Cheat Sheet</h2>
                 <table class="cheat-table" style="width:100%; border-collapse:collapse; background:#141c2e; border:1px solid #1e293b; border-radius:8px; overflow:hidden;">
-                    <tr style="background:#0f1623; color:#38bdf8;"><th style="padding:12px; text-align:left;">Topic</th><th style="padding:12px; text-align:left;">Core Definition</th></tr>
-                    <tr><td style="padding:12px; border-bottom:1px solid #1e293b;">P-J Fit[cite: 131]</td><td style="padding:12px; border-bottom:1px solid #1e293b; color:#94a3b8;">Matching individual KSAOs to job requirements[cite: 131].</td></tr>
+                    <tr style="background:#0f1623; color:#38bdf8;"><th style="padding:12px; text-align:left;">Concept</th><th style="padding:12px; text-align:left;">Definition</th></tr>
+                    <tr><td style="padding:12px; border-bottom:1px solid #1e293b;">P-J Fit[cite: 131]</td><td style="padding:12px; border-bottom:1px solid #1e293b; color:#94a3b8;">Matching KSAOs to job requirements[cite: 131].</td></tr>
                     <tr><td style="padding:12px; border-bottom:1px solid #1e293b;">TNA Levels[cite: 101]</td><td style="padding:12px; border-bottom:1px solid #1e293b; color:#94a3b8;">Organisation, Job/Task, and Person[cite: 101].</td></tr>
                     <tr><td style="padding:12px; border-bottom:1px solid #1e293b;">Halo Effect[cite: 179]</td><td style="padding:12px; border-bottom:1px solid #1e293b; color:#94a3b8;">Positive trait unfairly increases ratings in unrelated areas[cite: 179].</td></tr>
                 </table>
@@ -238,34 +125,97 @@
     </div>
 
     <script>
+        // Navigation Switching
         function switchView(viewName, event) {
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
             if(event) event.currentTarget.classList.add('active');
 
             if(viewName === 'dashboard') document.getElementById('dashboardView').classList.add('active');
-            else if(viewName === 'learn') document.getElementById('learnView').classList.add('active');
-            else if(viewName === 'pdfs') document.getElementById('pdfsView').classList.add('active');
+            else if(viewName === 'flashcards') document.getElementById('flashcardsView').classList.add('active');
             else if(viewName === 'quiz') document.getElementById('quizView').classList.add('active');
+            else if(viewName === 'pdfs') document.getElementById('pdfsView').classList.add('active');
             else if(viewName === 'cheatsheet') document.getElementById('cheatsheetView').classList.add('active');
         }
 
-        function submitQuiz() {
-            const selected = document.querySelector('input[name="q1"]:checked');
-            const result = document.getElementById('quizResult');
+        // Interactive Flashcards Array
+        const flashcards = [
+            { ch: "Ch 4", q: "What is Person-Job (P-J) fit?", a: "The degree to which individuals are matched to the required competencies (KSAOs) for job success[cite: 131]." },
+            { ch: "Ch 6", q: "What are the 3 levels of Training Needs Analysis (TNA)?", a: "1. Organisation analysis, 2. Job/task analysis, 3. Person analysis[cite: 101]." },
+            { ch: "Ch 7", q: "What is the Halo Effect in performance appraisals?", a: "When a rater's positive impression of an employee in one area influences ratings in unrelated areas[cite: 179]." }
+        ];
+        let currentCard = 0;
+
+        function nextFlashcard() {
+            currentCard = (currentCard + 1) % flashcards.length;
+            document.getElementById('fcChapter').innerText = flashcards[currentCard].ch;
+            document.getElementById('fcQuestion').innerText = flashcards[currentCard].q;
+            document.getElementById('fcAnswer').innerText = flashcards[currentCard].a;
+            document.getElementById('flashcard').classList.remove('flipped');
+        }
+
+        // Interactive Quiz Engine
+        const quizData = [
+            {
+                q: "Which TNA level identifies knowledge and skills needed to perform a job effectively[cite: 101]?",
+                options: ["Organisation Analysis", "Job / Task Analysis", "Person Analysis"],
+                correct: 1
+            },
+            {
+                q: "What appraisal error occurs when a positive trait spills over into unrelated areas[cite: 179]?",
+                options: ["Halo Effect", "Horn Effect", "Central Tendency"],
+                correct: 0
+            },
+            {
+                q: "Which test type requires applicants to perform actual or simulated job tasks (e.g. IKEA assembly)[cite: 144]?",
+                options: ["Cognitive Ability Test", "Work Sample Test", "Physical Ability Test"],
+                correct: 1
+            }
+        ];
+        let currentQuiz = 0;
+        let score = 0;
+
+        function loadQuiz() {
+            const q = quizData[currentQuiz];
+            document.getElementById('quizQuestion').innerText = `Question ${currentQuiz + 1}: ${q.q}`;
+            const optContainer = document.getElementById('quizOptions');
+            optContainer.innerHTML = '';
+            q.options.forEach((opt, idx) => {
+                optContainer.innerHTML += `<label style="cursor:pointer;"><input type="radio" name="quizOpt" value="${idx}"> ${opt}</label>`;
+            });
+            document.getElementById('quizFeedback').innerText = '';
+        }
+
+        function nextQuizQuestion() {
+            const selected = document.querySelector('input[name="quizOpt"]:checked');
+            const feedback = document.getElementById('quizFeedback');
             if(!selected) {
-                result.innerText = "Please select an option!";
-                result.style.color = "orange";
+                feedback.innerText = "Please select an answer!";
+                feedback.style.color = "orange";
                 return;
             }
-            if(selected.value === 'correct') {
-                result.innerText = "Correct! Job/task analysis evaluates knowledge and skills needed for the job[cite: 101].";
-                result.style.color = "#34d399";
+            const ans = parseInt(selected.value);
+            if(ans === quizData[currentQuiz].correct) {
+                feedback.innerText = "Correct! Great job.";
+                feedback.style.color = "#34d399";
+                score += Math.round(100 / quizData.length);
             } else {
-                result.innerText = "Incorrect. The correct answer is Job / Task Analysis[cite: 101].";
-                result.style.color = "#f87171";
+                feedback.innerText = "Incorrect. Review your lecture slides!";
+                feedback.style.color = "#f87171";
+            }
+            document.getElementById('liveScore').innerText = score + "%";
+
+            currentQuiz++;
+            if(currentQuiz < quizData.length) {
+                setTimeout(loadQuiz, 1200);
+            } else {
+                setTimeout(() => {
+                    document.getElementById('quizContainer').innerHTML = `<h3>Quiz Completed! 🎉</h3><p>Your final score: ${score}%</p><button class='continue-btn' onclick='location.reload()'>Restart Quiz</button>`;
+                }, 1200);
             }
         }
+
+        loadQuiz();
     </script>
 </body>
 </html>
