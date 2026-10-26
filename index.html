@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Management Study Dashboard</title>
+    <title>HR Management Study Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,15 +11,15 @@
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h2>🎓 HR Management</h2>
-                <p>Chapters 4, 6 & 7 Study Hub</p>
+                <h2>🎓 HR Study Hub</h2>
+                <p>Chapters 4, 6 & 7</p>
             </div>
             <nav class="sidebar-nav">
-                <a href="#" class="nav-item active" onclick="switchView('dashboard')">📊 Dashboard</a>
-                <a href="#" class="nav-item" onclick="switchView('learn')">📖 Learn Chapters</a>
-                <a href="#" class="nav-item" onclick="switchView('flashcards')">⚡ Flashcards</a>
-                <a href="#" class="nav-item" onclick="switchView('quiz')">📝 Practice Quiz</a>
-                <a href="#" class="nav-item" onclick="switchView('cheatsheet')">📋 Cheat Sheet</a>
+                <a href="#" class="nav-item active" onclick="switchView('dashboard', event)">📊 Dashboard</a>
+                <a href="#" class="nav-item" onclick="switchView('learn', event)">📖 Learn Chapters</a>
+                <a href="#" class="nav-item" onclick="switchView('flashcards', event)">⚡ Flashcards</a>
+                <a href="#" class="nav-item" onclick="switchView('quiz', event)">📝 Practice Quiz</a>
+                <a href="#" class="nav-item" onclick="switchView('cheatsheet', event)">📋 Cheat Sheet</a>
             </nav>
             <div class="sidebar-footer">
                 <p>Progress saved locally in browser.</p>
@@ -41,7 +41,7 @@
                     <div class="hero-text">
                         <span class="badge">Core HR Modules</span>
                         <h2>Master Selection, Training & Performance</h2>
-                        <p>Track your mastery across Employee Selection (Ch 4), Training Employees (Ch 6), and Performance Management (Ch 7).</p>
+                        <p>Track your mastery across Employee Selection (Ch 4)[cite: 35], Training Employees (Ch 6)[cite: 2], and Performance Management (Ch 7)[cite: 68].</p>
                     </div>
                 </div>
 
@@ -67,21 +67,21 @@
                     <div class="chapter-card">
                         <span class="badge-ch">Chapter 4</span>
                         <h3>Selecting & Placing Employees</h3>
-                        <p>Covers selection stages, Application Tracking Systems (ATS), employment tests (Cognitive, Physical, Work Sample, Personality/OPQ), and background checks[cite: 36, 46, 50, 64].</p>
+                        <p>Covers selection stages, ATS, employment tests (Cognitive, Physical, Work Sample, Personality/OPQ), and background checks[cite: 36, 46, 50, 64].</p>
                         <button class="btn-sm" onclick="switchView('learn')">Study Chapter</button>
                     </div>
                     <!-- Chapter 6 -->
                     <div class="chapter-card">
                         <span class="badge-ch">Chapter 6</span>
                         <h3>Training Employees</h3>
-                        <p>Covers Training Needs Analysis (TNA), readiness for training, training methods (Classroom, OJT, Simulation, VR, Digital), and success evaluation[cite: 3, 10, 15, 18, 30].</p>
+                        <p>Covers TNA levels, readiness for training, training methods (Classroom, OJT, Simulation, VR, Digital), and evaluation[cite: 3, 10, 15, 18, 30].</p>
                         <button class="btn-sm" onclick="switchView('learn')">Study Chapter</button>
                     </div>
                     <!-- Chapter 7 -->
                     <div class="chapter-card">
                         <span class="badge-ch">Chapter 7</span>
-                        <h3>Managing Employee Performance</h3>
-                        <p>Covers performance appraisal sources (360-degree), rating methods (Graphic scales, BARS, Productivity, Forced distribution), and feedback methods[cite: 69, 77, 78, 90].</p>
+                        <h3>Managing Performance</h3>
+                        <p>Covers appraisal sources (360-degree), rating methods (Graphic scales, BARS, Productivity, Forced distribution), and feedback[cite: 69, 77, 78, 90].</p>
                         <button class="btn-sm" onclick="switchView('learn')">Study Chapter</button>
                     </div>
                 </div>
@@ -89,35 +89,22 @@
 
             <!-- VIEW: LEARN CHAPTERS -->
             <div id="learnView" class="view-section">
-                <h2>Interactive Chapter Summaries & Key Terms</h2>
-                <div class="accordion-group">
-                    <div class="card">
-                        <h3>Chapter 4: Employee Selection & Placement</h3>
-                        <ul>
-                            <li><strong>Person-Job Fit (P-J Fit):</strong> Matching individual KSAOs (Knowledge, Skills, Abilities, Other characteristics) to job requirements[cite: 39].</li>
-                            <li><strong>Applicant Tracking System (ATS):</strong> Software automating job postings, keyword resume screening, and tracking candidate pipelines[cite: 46].</li>
-                            <li><strong>Employment Tests:</strong> Includes Cognitive, Physical, Work Samples (e.g., IKEA assembly test), Personality inventories (Big-5, OPQ32r, Unilever Portrait test)[cite: 50, 52, 53, 55, 56, 58].</li>
-                            <li><strong>Background Checks:</strong> Verifying identity, education, criminal records, and employment history (high APAC discrepancies found in employment & education)[cite: 64].</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Chapter 6: Training Employees</h3>
-                        <ul>
-                            <li><strong>Training Needs Analysis (TNA):</strong> Assessed at 3 levels: Organisation (strategic goals), Job/Task (required skills), and Person (who needs development)[cite: 10].</li>
-                            <li><strong>Readiness for Training:</strong> Combination of employee characteristics (ability/motivation) and work environment support[cite: 15].</li>
-                            <li><strong>Training Methods:</strong> Classroom, Audiovisual, Computer-based, On-the-Job Training (OJT), Simulations, VR, and Business Games/Case Studies[cite: 18].</li>
-                            <li><strong>Evaluation Measures:</strong> Trainee satisfaction, new knowledge/skills, transfer of training, performance improvements, and Return on Investment (ROI)[cite: 29].</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Chapter 7: Managing Employee Performance</h3>
-                        <ul>
-                            <li><strong>Performance Management (PM):</strong> Continuous process of setting expectations, reviewing progress, and supporting contribution[cite: 70]. Purpose is Strategic, Administrative, and Developmental[cite: 74].</li>
-                            <li><strong>Appraisal Sources:</strong> Manager, Peers, Subordinates, Self-appraisal, Customers, and 360-Degree Feedback[cite: 77, 78].</li>
-                            <li><strong>Measurement Methods:</strong> Graphic Rating Scales, BARS (Behaviorally Anchored Rating Scales), Productivity/Results measures, and Forced-distribution (normal curve)[cite: 78, 83].</li>
-                            <li><strong>Rater Errors:</strong> Halo/Horn effects, Leniency/Strictness, Central Tendency, Recency error, and Similar-to-me bias[cite: 85, 87, 88].</li>
-                        </ul>
-                    </div>
+                <h2>Interactive Chapter Summaries</h2>
+                <div class="card">
+                    <h3>Chapter 4: Employee Selection & Placement[cite: 35]</h3>
+                    <ul>
+                        <li><strong>Person-Job Fit (P-J Fit):</strong> Matching individual KSAOs to job requirements[cite: 39].</li>
+                        <li><strong>Applicant Tracking System (ATS):</strong> Software automating job postings, keyword resume screening, and pipelines[cite: 46].</li>
+                        <li><strong>Employment Tests:</strong> Cognitive, physical, work samples (e.g., IKEA assembly test), and personality inventories (Big-5, OPQ32r)[cite: 50, 52, 53, 55, 56].</li>
+                    </ul>
+                </div>
+                <div class="card" style="margin-top: 20px;">
+                    <h3>Chapter 6: Training Employees[cite: 2]</h3>
+                    <ul>
+                        <li><strong>Training Needs Analysis (TNA):</strong> Assessed at Organisation, Job/Task, and Person levels[cite: 10].</li>
+                        <li><strong>Training Methods:</strong> Classroom, audiovisual, computer-based, OJT, simulations, VR, and case studies[cite: 18].</li>
+                        <li><strong>Evaluation:</strong> Trainee satisfaction, new knowledge/skills, transfer of training, performance improvements, and ROI[cite: 29].</li>
+                    </ul>
                 </div>
             </div>
 
@@ -133,9 +120,9 @@
                         </div>
                         <div class="flashcard-back">
                             <h3>Answer:</h3>
-                            <p>1. <strong>Organisation</strong> (capabilities supporting goals)<br>
-                               2. <strong>Job / Task</strong> (knowledge & skills needed)<br>
-                               3. <strong>Employee / Person</strong> (who needs development & specific gaps)[cite: 10]</p>
+                            <p>1. <strong>Organisation</strong> (strategic goals)<br>
+                               2. <strong>Job / Task</strong> (required skills)<br>
+                               3. <strong>Employee / Person</strong> (specific skill gaps)[cite: 10]</p>
                         </div>
                     </div>
                 </div>
@@ -145,7 +132,7 @@
             <div id="quizView" class="view-section">
                 <h2>Practice Exam Quiz</h2>
                 <div class="quiz-card" id="quizContainer">
-                    <h3>Question 1: Which appraisal error occurs when a rater's positive impression in one area (e.g., punctuality) spills over into unrelated areas?</h3>
+                    <h3>Question 1: Which appraisal error occurs when a rater's positive impression in one area spills over into unrelated areas?</h3>
                     <label><input type="radio" name="q1" value="wrong"> Central Tendency Error</label><br>
                     <label><input type="radio" name="q1" value="correct"> Halo Effect[cite: 88]</label><br>
                     <label><input type="radio" name="q1" value="wrong"> Contrast Error</label><br>
@@ -158,10 +145,10 @@
             <div id="cheatsheetView" class="view-section">
                 <h2>Comprehensive HR Cheat Sheet</h2>
                 <table class="cheat-table">
-                    <tr><th>Topic</th><th>Core Concept / Formula</th><th>Key Example</th></tr>
-                    <tr><td>Person-Job Fit</td><td>Matching individual KSAOs to job requirements[cite: 39].</td><td>Skills align with job specs.</td></tr>
-                    <tr><td>TNA Levels</td><td>Organisation, Job/Task, Person analysis[cite: 10].</td><td>Identifying training gaps.</td></tr>
-                    <tr><td>BARS</td><td>Rating behavior based on specific behavioral anchors[cite: 78].</td><td>Detailed collaboration scales[cite: 81].</td></tr>
+                    <tr><th>Topic</th><th>Core Concept</th><th>Key Example</th></tr>
+                    <tr><td>Person-Job Fit</td><td>Matching individual KSAOs to job specifications[cite: 39].</td><td>Skills align with job role.</td></tr>
+                    <tr><td>TNA Levels</td><td>Organisation, Job/Task, Person analysis[cite: 10].</td><td>Identifying performance gaps.</td></tr>
+                    <tr><td>BARS</td><td>Rating behavior based on specific behavioral anchors[cite: 78].</td><td>Detailed collaboration metrics[cite: 81].</td></tr>
                     <tr><td>Halo Effect</td><td>Positive trait unfairly increases ratings in other areas[cite: 88].</td><td>Punctuality boosting teamwork rating[cite: 88].</td></tr>
                 </table>
             </div>
@@ -169,13 +156,14 @@
     </div>
 
     <script>
-        function switchView(viewName) {
+        function switchView(viewName, event) {
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
             
+            if(event) event.currentTarget.classList.add('active');
+
             if(viewName === 'dashboard') {
                 document.getElementById('dashboardView').classList.add('active');
-                event.target.classList.add('active');
                 document.getElementById('viewTitle').innerText = 'Dashboard';
             } else if(viewName === 'learn') {
                 document.getElementById('learnView').classList.add('active');
